@@ -1,0 +1,6 @@
+#!/bin/bash
+CREATOR = aws deploy get-deployment --deployment-id $DEPLOYMENT_ID --query "deploymentInfo.creator" --output text
+if [ "$CREATOR" == "user" ]
+then
+    yum install -y httpd
+fi
